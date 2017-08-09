@@ -7,4 +7,5 @@ RUN apk add bash openssl && \
       mkdir /usr/local/oracle && \
       tar -C /usr/local/oracle -xzf linux.tar.gz && \
       rm -rf /usr/local/linux.tar.gz && \
-      echo "providers { baremetal = \"/usr/local/oracle/linux_386/terraform-provider-baremetal\" }" | tee ~/.terraformrc
+      echo "providers { baremetal = \"/usr/local/oracle/linux_386/terraform-provider-baremetal\" }" | tee ~/.terraformrc && \
+      tail -f /dev/null
