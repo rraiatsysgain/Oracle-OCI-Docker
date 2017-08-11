@@ -18,4 +18,6 @@ RUN apk add bash openssl && \
       rm -rf /usr/local/linux.tar.gz && \
       echo "providers { baremetal = \"/usr/local/oracle/linux_386/terraform-provider-baremetal\" }" | tee ~/.terraformrc
 
+COPY install.sh /home/install.sh
+
 CMD ["sh", "-c", "sleep 300"]
