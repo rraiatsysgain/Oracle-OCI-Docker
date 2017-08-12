@@ -15,8 +15,8 @@ RUN apk add bash openssl && \
       wget https://github.com/oracle/terraform-provider-baremetal/releases/download/v${ORACLE_BARE_METAL_CLOUD}/linux.tar.gz && \
       mkdir /usr/local/oracle && \
       tar -C /usr/local/oracle -xzf linux.tar.gz && \
-      rm -rf /usr/local/linux.tar.gz && \
-      echo "providers { baremetal = \"/usr/local/oracle/linux_386/terraform-provider-baremetal\" }" | tee ~/.terraformrc
+      cp /usr/local/oracle/linux_amd64/terraform-provider-baremetal /home && \
+      rm -rf /usr/local/linux.tar.gz
 
 COPY install.sh /home/install.sh
 
