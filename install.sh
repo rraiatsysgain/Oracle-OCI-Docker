@@ -1,7 +1,2 @@
 #!/bin/bash
-
-curl -o /home/soln.zip $ZIPURL
-unzip /home/soln.zip -d /home/
-echo "Prepping to Terraform"
-terraform plan /home
-terraform apply /home
+curl -o /home/exitsoln.zip $ZIPURL && unzip /home/soln.zip -d /home/
