@@ -20,4 +20,6 @@ RUN apk add bash openssl && \
 
 COPY install.sh /home/install.sh
 
+WORKDIR /home
+
 CMD ["sh", "-c", "sleep 300"]
