@@ -16,12 +16,12 @@ RUN apk add bash openssl && \
       mkdir /usr/local/oracle && \
       tar -C /usr/local/oracle -xzf linux.tar.gz && \
       #cp /usr/local/oracle/linux_amd64/terraform-provider-baremetal /home && \
-      cp /usr/local/oracle/linux_amd64/terraform-provider-baremetal /root/.terraform.d/plugins/ && \
-      rm -rf /usr/local/linux.tar.gz
+      #cp /usr/local/oracle/linux_amd64/terraform-provider-baremetal /root/.terraform.d/plugins/ && \
+      #rm -rf /usr/local/linux.tar.gz
 
-COPY install.sh /home/install.sh
-COPY .terraformrc /root/.terraformrc
+#COPY install.sh /home/install.sh
+#COPY .terraformrc /root/.terraformrc
 
 WORKDIR /home
 
-CMD ["sh", "-c", "sleep 300"]
+#CMD ["sh", "-c", "sleep 300"]
