@@ -22,6 +22,6 @@ RUN apk add bash openssl && \
 #COPY install.sh /home/install.sh
 #COPY .terraformrc /root/.terraformrc
 
-WORKDIR /home
+#WORKDIR /home
 
 #CMD ["sh", "-c", "sleep 300"]
