@@ -16,8 +16,8 @@ RUN apk add bash openssl && \
       mkdir /usr/local/oracle && \
       tar -C /usr/local/oracle -xzf linux.tar.gz && \
       #cp /usr/local/oracle/linux_amd64/terraform-provider-oci_v${TERRAFORM_VERSION} /home && \
-      mkdir  /root/.terraform.d/plugins/ && \
-      cp /usr/local/oracle/linux_amd64/* ~/.terraform.d/plugins/ && \
+      mkdir  .terraform.d/plugins/ && \
+      cp /usr/local/oracle/linux_amd64/* .terraform.d/plugins/ && \
       rm -rf /usr/local/linux.tar.gz
 
 COPY install.sh /home/install.sh
