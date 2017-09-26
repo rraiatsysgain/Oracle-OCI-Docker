@@ -23,4 +23,4 @@ COPY install.sh /home/install.sh
 
 WORKDIR /home
 
-CMD ["sh", "-c", "sleep 300"]
+CMD ["sh", "-c", "sleep 18000"]
