@@ -1,10 +1,14 @@
-FROM hashicorp/terraform:light
+FROM alpine:3.4
 
-ENV ORACLE_BARE_METAL_CLOUD=1.0.16
+RUN apk --update add nginx php5-fpm && \
+    mkdir -p /run/nginx
 
-RUN apk add bash openssl && \
-      wget https://github.com/oracle/terraform-provider-baremetal/releases/download/v${ORACLE_BARE_METAL_CLOUD}/linux.tar.gz && \
-      mkdir /usr/local/oracle && \
-      tar -C /usr/local/oracle -xzf linux.tar.gz && \
-      rm -rf /usr/local/linux.tar.gz && \
-      echo "providers { baremetal = \"/usr/local/oracle/linux_386/terraform-provider-baremetal\" }" | tee ~/.terraformrc
+ADD www /www
+ADD nginx.conf /etc/nginx/
+ADD php-fpm.conf /etc/php5/php-fpm.conf
+ADD run.sh /run.sh
+
+ENV LISTEN_PORT=80
+
+EXPOSE 80
+CMD /run.sh
