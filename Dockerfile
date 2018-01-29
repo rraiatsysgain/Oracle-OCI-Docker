@@ -1,7 +1,7 @@
 FROM azuresdk/azure-cli-python:latest
 
 COPY install.sh /home/install.sh
-COPY init.sh /home/init.sh
+COPY login.sh /home/login.sh
 COPY parameter.sh /home/parameter.sh
 COPY createrg.sh /home/createrg.sh
 COPY validate.sh /home/validate.sh
