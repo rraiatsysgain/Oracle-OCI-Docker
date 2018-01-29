@@ -5,6 +5,6 @@ for var in $(compgen -e); do
 done
 json=$json"}}"
 
-cat <<EOF > azure.test.json
+cat <<EOF > azuredeploy.parameters.json
 $json
 EOF
