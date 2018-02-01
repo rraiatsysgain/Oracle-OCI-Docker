@@ -2,7 +2,7 @@
 wget $TEMPLATE_URL -O soln.zip
 
 unzip soln.zip
-wget $PRIVATE_KEY_URL -O app_key.pem
+wget $AZ_VAR_app_secret_url -O app_key.pem
 #v=$(unzip soln.zip | grep -m1 'creating:' | cut -d' ' -f5-)
 #v="$v."
 #cp -r $v .
